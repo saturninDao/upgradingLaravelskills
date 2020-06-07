@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Article;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,4 +21,11 @@ Route::get('/', function () {
 
 Route::get('bonjour/{name}', function ($name) {
     return 'Bonjour '.$name;
+});
+
+Route::get('articles/{id}', function ($id) {  
+  
+    $article = Article::find($id);  
+    return 'Le nom de cet article est : ' . $article->title;  
+  
 });
