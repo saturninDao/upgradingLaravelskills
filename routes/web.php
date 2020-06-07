@@ -15,28 +15,28 @@ use App\Message;
 |
 */
 
-// Page d’accueil : liste des messages  
-Route::get(’/’, function () {  
+// Page d'accueil : liste des messages  
+Route::get('/', function () {  
   
     // Liste des messages du plus récent au plus ancien.  
     $messages = Message::latest()->get();  
   
     // Affichage de la vue.  
-    return view(’home’, [’messages’ => $messages]);  
+    return view('home', ['messages' => $messages]);  
   
 });  
   
-// Enregistrement d’un message  
-Route::post(’/’, function () {  
+// Enregistrement d'un message  
+Route::post('/', function () {  
   
-    // Enregistrement du message à partir d’un formulaire  
+    // Enregistrement du message à partir d'un formulaire  
     $message = new Message;  
-    $message->author_name = request(’author_name’, ’Inconnu’);  
-    $message->content = request(’content’, ’-’);  
+    $message->author_name = request('author_name', 'Inconnu');  
+    $message->content = request('content', '-');  
     $message->save();  
   
-    // Redirection vers la page d’accueil  
-    return redirect(’/’);  
+    // Redirection vers la page d'accueil  
+    return redirect('/');  
   
 });
 
