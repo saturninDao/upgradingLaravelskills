@@ -10,5 +10,12 @@ class Article extends Model
     {  
         // Les commentaires sur un article  
         return $this->hasMany(Comment::class);  
-    }  
+
+    }
+
+    public function categories()  
+    {  
+        // Un article appartient à une ou plusieurs catégories. 
+        return $this->belongsToMany(Category::class);  
+    } 
 }
