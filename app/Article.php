@@ -49,5 +49,23 @@ class Article extends Model
             ]);
 
         */
+
+        /*
+        
+        Obtenir les catégories d’un article et inversement
+
+
+        $article = Article::find(175);  
+        
+        $categories = $article->categories;  
+        
+        foreach($categories as $category) {  
+            // Faire quelque chose avec la catégorie  
+        }  
+        
+        // Récupérer tous les articles liés à la première catégorie  
+        $articles = $categories->first()->articles;
+        
+        */ 
     } 
 }
