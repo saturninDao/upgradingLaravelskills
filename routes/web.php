@@ -51,3 +51,5 @@ Route::get('articles/{id}', function ($id) {
     return 'Le nom de cet article est : ' . $article->title;  
   
 });
+
+Route::get('secret-page','SecretController@index')->middleware('only-my-ip');
