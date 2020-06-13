@@ -35,6 +35,20 @@
   @endif  
   
   <h2>Poster un nouveau message</h2>  
+
+    @if ($errors->any())  
+    <div class="alert alert-danger">  
+      <strong>  
+        Oups. Nous n’avons pas pu enregistrer votre  
+        demande pour la raison suivante :  
+      </strong>  
+      <ul class="list-unstyled">  
+        @foreach ($errors->all() as $error)  
+          <li>{{ $error }}</li>  
+        @endforeach  
+      </ul>  
+    </div>  
+  @endif  
   
   <form method="post">  
     {{ csrf_field() }}  
