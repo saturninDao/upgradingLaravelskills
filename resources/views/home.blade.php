@@ -54,11 +54,11 @@
     {{ csrf_field() }}  
   
     <label for="author_name">Pseudo : </label>  
-    <input name="author_name" id="author_name" type="text">  
+    <input value="{{ old('author_name')}}" name="author_name" id="author_name" type="text">  
     <br>  
   
     <label for="content">Message : </label>  
-    <textarea name="content" id="content"></textarea>  
+    <textarea value="{{ old('content')}}" name="content" id="content"></textarea>  
     <br>  
   
     <input type="submit" value="Envoyer le message">  
