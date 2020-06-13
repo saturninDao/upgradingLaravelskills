@@ -16,21 +16,10 @@ use App\Message;
 */
 
 // Page d'accueil : liste des messages  
-Route::get('/', 'ArticleController@store'); 
+Route::get('/', 'ArticleController@index'); 
   
 // Enregistrement d'un message  
-Route::post('/', function () {  
-  
-    // Enregistrement du message à partir d'un formulaire  
-    $message = new Message;  
-    $message->author_name = request('author_name', 'Inconnu');  
-    $message->content = request('content', '-');  
-    $message->save();  
-  
-    // Redirection vers la page d'accueil  
-    return redirect('/');  
-  
-});
+Route::post('/', 'ArticleController@store');
 
 
 Route::get('bonjour/{name}', function ($name) {
