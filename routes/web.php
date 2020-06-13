@@ -16,15 +16,7 @@ use App\Message;
 */
 
 // Page d'accueil : liste des messages  
-Route::get('/', function () {  
-  
-    // Liste des messages du plus récent au plus ancien.  
-    $messages = Message::latest()->get();  
-  
-    // Affichage de la vue.  
-    return view('home', ['messages' => $messages]);  
-  
-});  
+Route::get('/', 'ArticleController@store'); 
   
 // Enregistrement d'un message  
 Route::post('/', function () {  
