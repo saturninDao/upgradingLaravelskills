@@ -49,6 +49,14 @@
       </ul>  
     </div>  
   @endif  
+
+    @if (session('message'))  
+    <div class="alert alert-info">  
+      <strong>  
+        {{ session('message') }}  
+      </strong>  
+    </div>  
+  @endif
   
   <form method="post">  
     {{ csrf_field() }}  

@@ -33,6 +33,7 @@ class ArticleController extends Controller
        // dd($data);exit;
         
         // Redirection vers la page d'accueil  
-        return redirect('/'); 
+        return redirect('/')->with(['message'=>"Votre message est bien enregistré"
+            ]); 
     }
 }
