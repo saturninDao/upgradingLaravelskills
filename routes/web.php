@@ -34,3 +34,6 @@ Route::get('articles/{id}', function ($id) {
 });
 
 Route::get('secret-page','SecretController@index')->middleware('only-my-ip');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
