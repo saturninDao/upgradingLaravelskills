@@ -25,6 +25,20 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
-        //
+        // Premiere porte :
+        // Acces à l'administration
+        Gate::define('show-administration',function($user){
+            return $user->role =='admin';
+        });
+
+        // Seconde porte:
+        // Possibilité de modifier un message
+        Gate::define(
+            'update-message',
+            function($user,$message){
+                return $message->user_id == $user->id;
+            }
+        );
+
     }
 }
