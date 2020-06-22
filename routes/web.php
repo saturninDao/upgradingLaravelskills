@@ -37,3 +37,23 @@ Route::get('secret-page','SecretController@index')->middleware('only-my-ip');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get(  
+    '/documents/{id}',  
+    'DocumentController@show'  
+)->middleware('can:show,App\Document');  
+  
+Route::get(  
+    '/documents/create',  
+    'DocumentController@create'  
+)->middleware('can:create,App\Document');  
+  
+Route::get(  
+    '/documents/{id}/delete',  
+    'DocumentController@delete'  
+)->middleware('can:delete,App\Document');  
+  
+Route::get(  
+    '/documents/',  
+    'DocumentController@index'  
+)->middleware('can:showAll,App\Document');
